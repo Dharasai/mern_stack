@@ -1,0 +1,44 @@
+// Header page
+
+.Header {
+    background-color: rgb(246, 252, 252);
+    height: auto;
+    width: auto;
+}
+
+.header-logo {
+    img {
+        height: 80px;
+        width: 112px;
+        border-radius: 50%;
+    }
+}
+.header-body {
+    display: flex;
+}
+ul {
+    display: flex;
+    list-style-type: none;
+    border: 1;
+    margin-left: 940px;
+    margin-top: 17px;
+    li {
+        padding: 2vh;
+        margin-left: 5px;
+        color: aliceblue;
+        text-decoration: none;
+        border: 2px solid rgb(30, 31, 32);
+        border-radius: 10px;
+        a {
+            display: flex;
+            // height: 5px;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+a {
+    align-items: center;
+    text-decoration: none;
+}

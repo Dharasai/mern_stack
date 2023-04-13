@@ -1,0 +1,131 @@
+//  importing the variables from variables scss and using.
+
+@import "../vendors/variables.scss";
+@import "./header.scss";
+// * {
+//     margin: 0;
+//     padding: 0;
+// }
+body {
+    // background: #9dc0d4;
+    // background: url("../../../images/Login/loginbg.webp");
+}
+
+// login page
+
+.Login-Page {
+    .login-section {
+        .Login-Page-container {
+            background-color: $whiteColor;
+            margin: auto;
+            margin-top: 35vh;
+            width: 400px;
+            height: 400px;
+            border-radius: 10px;
+            padding-bottom: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .Login-Page-content {
+                .login-header {
+                    margin-left: 30vh;
+                    padding: 22px;
+                    color: rgb(190, 68, 84);
+                    font-size: large;
+                    font-weight: 700;
+                }
+                .login-body {
+                    .form input {
+                        margin: 1.8vh;
+                        padding: 1.5vh;
+                        border-radius: 5px;
+                    }
+                    .form .form_footer button {
+                        padding: 1.2vh;
+                        width: 90px;
+                        color: aliceblue;
+                        background-color: rgb(44, 101, 207);
+                        border-radius: 10px;
+                    }
+                    .form .login-body-header {
+                        font-size: x-large;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//  register page
+
+.register-page {
+    .register-section {
+        .container {
+            background-color: $whiteColor;
+            margin: auto;
+            margin-top: 35vh;
+            width: 400px;
+            height: 400px;
+            border-radius: 10px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .register-content {
+                .register-header {
+                    margin-left: 30vh;
+                    padding: 22px;
+                    color: rgb(190, 68, 84);
+                    font-size: large;
+                    font-weight: 700;
+                }
+                .register-body {
+                    .form input {
+                        margin: 1.8vh;
+                        padding: 1.5vh;
+                        border-radius: 5px;
+                    }
+                    .form .form_footer button {
+                        padding: 1.2vh;
+                        width: 90px;
+                        color: aliceblue;
+                        background-color: rgb(44, 101, 207);
+                        border-radius: 10px;
+                    }
+                    .form .register-body-header {
+                        font-size: x-large;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//  contact page
+
+.Contact-Page {
+    .Contact-Page-section {
+        .Contact-Page-container {
+            .Contact-Page-content{
+                .Contact-Page-header{
+                    h1{
+                      background-color: rgb(122, 122, 121);  
+                      height: 60px;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
+                }
+                .Contact-Page-body{
+                    
+                }
+
+            }
+        }
+    }
+}
