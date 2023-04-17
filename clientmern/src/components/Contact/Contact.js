@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from '../Header/Header'
 
 const Contact = () => {
     return (
@@ -6,6 +7,7 @@ const Contact = () => {
             <div className="Contact-Page">
                 <div className="Contact-Page-section">
                     <div className="Contact-Page-container">
+                    {/* <Header /> */}
                         <div className="Contact-Page-content">
                             <div className="Contact-Page-header">
                                 <h1>
@@ -15,7 +17,6 @@ const Contact = () => {
                             <div className="Contact-Page-body">
                                 <div className="Contact-Page-row">
                                 <div className="Contact-Page-row-item">
-
                                 </div>
                                     <div className='item'>
                                         Netflix

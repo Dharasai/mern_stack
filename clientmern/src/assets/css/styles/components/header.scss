@@ -1,9 +1,9 @@
 // Header page
 
 .Header {
-    background-color: rgb(246, 252, 252);
-    height: auto;
-    width: auto;
+    background-color: rgb(147, 218, 218);
+    // height: 100%;
+    // width: 100%;
 }
 
 .header-logo {
@@ -15,25 +15,37 @@
 }
 .header-body {
     display: flex;
-}
-ul {
-    display: flex;
-    list-style-type: none;
-    border: 1;
-    margin-left: 940px;
-    margin-top: 17px;
-    li {
-        padding: 2vh;
-        margin-left: 5px;
-        color: aliceblue;
-        text-decoration: none;
-        border: 2px solid rgb(30, 31, 32);
-        border-radius: 10px;
-        a {
+    width: 100%;
+    .header-logo {
+        display: flex;
+        width: 50%;
+        background-color: rgb(49, 101, 146);
+        justify-content: flex-start;
+        padding-left: 20px;
+    }
+    .navbar {
+        width: 50%;
+        background-color: rgb(49, 101, 146);
+        ul {
             display: flex;
-            // height: 5px;
-            align-items: center;
-            justify-content: center;
+            justify-content: flex-end;
+            list-style-type: none;
+            border: 1;
+            margin-right: 5vh;
+            li {
+                padding: 2vh;
+                margin-right: 5px;
+                text-decoration: none;
+                border: 2px solid rgb(30, 31, 32);
+                border-radius: 10px;
+                a {
+                    display: flex;
+                    color: aliceblue;
+                    height: 5px;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
         }
     }
 }
@@ -41,4 +53,9 @@ ul {
 a {
     align-items: center;
     text-decoration: none;
+}
+
+.header-container {
+    height: 100%;
+    width: 100%;
 }

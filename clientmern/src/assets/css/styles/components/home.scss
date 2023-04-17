@@ -6,6 +6,10 @@
 //     margin: 0;
 //     padding: 0;
 // }
+*{
+    box-sizing: border-box;
+
+}
 body {
     // background: #9dc0d4;
     // background: url("../../../images/Login/loginbg.webp");
@@ -14,27 +18,30 @@ body {
 // login page
 
 .Login-Page {
+    background-color: rgb(44, 42, 42);
     .login-section {
+        padding-top: 35vh;
+        padding-bottom: 20vh;
         .Login-Page-container {
-            background-color: $whiteColor;
+            background-color: rgb(241, 241, 239);
             margin: auto;
-            margin-top: 35vh;
             width: 400px;
             height: 400px;
             border-radius: 10px;
             padding-bottom: 20px;
-
+            box-shadow: 10px 10px 5px lightblue;
             display: flex;
             justify-content: center;
             align-items: center;
 
             .Login-Page-content {
                 .login-header {
-                    margin-left: 30vh;
                     padding: 22px;
                     color: rgb(190, 68, 84);
                     font-size: large;
                     font-weight: 700;
+                    justify-content: flex-end;
+                    margin-right: 5px;
                 }
                 .login-body {
                     .form input {

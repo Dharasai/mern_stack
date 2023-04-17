@@ -1,21 +1,42 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Login = () => {
-    const [userName, setUserName] = useState();
 
     const navigate = useNavigate();
     const usernameref = useRef();
     const passwordref = useRef();
 
     const handleSubmit = () => {
-        console.log('Submit usernameref', usernameref.current);
-        console.log('Submit passwordref', passwordref.current.value);
-        console.log('Submit userName', userName);
-        if(passwordref.current.value.length >= 8){
-            navigate("/home")
+     
+        const email = usernameref.current.value;
+        const password = passwordref.current.value;
+        if (email !== "" && password !== "") {
+            const headers = {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer TOKEN_HERE'
+            };
+            const obj = {
+                email: email,
+                password: password
+            }
+            axios.post("http://localhost:4000/login", {
+                headers,
+                obj
+            })
+            .then(res => {
+                console.log(res);
+                navigate('/home');
+            })
+            .catch(error =>{
+                console.log("error: ", error);
+
+            })
         }
     }
+
+
     return (
         <React.Fragment>
             <div className="Login-Page">
@@ -46,7 +67,7 @@ const Login = () => {
                                             <input ref={usernameref} type="email" name="email" placeholder="Email" id='username-input' />
                                         </div>
                                         <div className='password-input'>
-                                            <input ref={passwordref} type="password" name="password" placeholder="Password" id='password-input' onChange={(e) => setUserName(e.target.value)} />
+                                            <input ref={passwordref} type="password" name="password" placeholder="Password" id='password-input' />
                                         </div>
                                         <br />
                                     </div>
