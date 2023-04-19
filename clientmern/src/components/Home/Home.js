@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../Header/Header'
+import axios from 'axios'
 // import Login from '../LoginPage/Login'
 // import SideBar from '../SideBar/SideBar'
 
 const Home = () => {
+    
+    useEffect(() =>{
+        axios.get("http://localhost:4000/user")
+        .then(res => {
+            console.log(res);
+        })
+        .catch(error =>{
+            console.log("error: ", error);
+
+        })
+    },[])
     return (
         <React.Fragment>
             <div className='Home-page'>

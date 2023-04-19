@@ -39,17 +39,21 @@ app.get("/user", (req, res) => {
 //  register API POST method
 app.post('/register', async (req, res) => {
     const { username, password } = req.body;
-    const userDoc = await UserModel.create({ username, password });
-    res.json(userDoc);
-    // res.json({});
+    try{
+        const userDoc = await UserModel.create({ username, password });
+        res.json(userDoc);
+    }catch(err){
+     console.error(err);
+     res.status(500).json({ error: 'Internal Server Error' });
+    }
 });
 
 // Login API POST method
-app.post('/login', async (req, res) => {
-    const {email,password} = req.body;
-    const userDoc = await UserModel.create({ email, password });
-    res.json(userDoc);
-});
+// app.post('/login', async (req, res) => {
+//     const {email,password} = req.body;
+//     const userDoc = await UserModel.create({ email, password });
+//     res.json(userDoc);
+// });
 // res.json({ requestData: { email, password } });
 
 app.post('/signin', async (req, res) => {
@@ -61,6 +65,21 @@ app.post('/signin', async (req, res) => {
 });
 
 
+app.post("/login", async (req, res) => {
+    const {email, password} = req.body;
+    const user = await UserModel.findOne({email});
+
+    if(!user){
+        return re.status(401).json({ error: "Invalid email or password"});
+    }
+
+    const isPasswordvalid = await user.comparePassword(password);
+
+    if(!isPasswordvalid){
+        return res.status(401).json({ error: "Invalid password"});
+    }
+    res.json({ message : "Logged on successfully", user});
+})
 
 app.listen(4000, () => console.log('Server started on port 4000'));
 

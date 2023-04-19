@@ -5,23 +5,23 @@ const Register = () => {
 
     const navigate = useNavigate();
 
-    const [userName, setUserName] = useState();
+    const [username, setUserName] = useState();
     const [password, setPassword] = useState();
 
 
 
     const submithandler = () => {
         console.log("password: ", password);
-        console.log("userName: ", userName);
-
-        if (userName !== "" && password !== "") {
+        console.log("userName: ", username);
+           
+        if (username !== "" && password !== "") {
             const headers = {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer TOKEN_HERE'
             };
             const obj = {
-                username: userName,
-                password: password
+                "username": username,
+                "password": password
             }
             axios.post("http://localhost:4000/register", {
                 headers,
@@ -62,7 +62,7 @@ const Register = () => {
                                             <input
                                                 type="text"
                                                 placeholder='email'
-                                                value={userName}
+                                                value={username}
                                                 onChange={(e) => setUserName(e.target.value)} />
                                         </div>
                                         <div className="password-input">
