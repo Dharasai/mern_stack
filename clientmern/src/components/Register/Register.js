@@ -1,41 +1,50 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 const Register = () => {
 
     const navigate = useNavigate();
 
-    const [username, setUserName] = useState();
-    const [password, setPassword] = useState();
+    const [username, setUserName] = useState("");
+    const [password, setPassword] = useState("");
+    const [status, setStatus] = useState();
 
+    useEffect(() => {
+        if (status?.message === "registered successfully") {
+            navigate("/home");
+        }
+
+        console.log("status: ======", status);
+    }, [status]);
 
 
     const submithandler = () => {
         console.log("password: ", password);
         console.log("userName: ", username);
-           
+
         if (username !== "" && password !== "") {
             const headers = {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer TOKEN_HERE'
             };
             const obj = {
-                "username": username,
-                "password": password
+                username: username,
+                password: password
             }
-            axios.post("http://localhost:4000/register", {
-                headers,
-                obj
+            axios.post("http://localhost:4000/register", obj, {
+                headers: headers
             })
-            .then(res => {
-                console.log(res);
-            })
-            .catch(error =>{
-                console.log("error: ", error);
+                .then(res => {
+                    console.log(setStatus(res));
+                })
+                .catch(error => {
+                    setStatus(error)
+                    console.log("error: ", error);
 
-            })
+                })
         }
     }
+
     return (
         <React.Fragment>
             {/* main Login-Page*/}
