@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import "../src/assets/css/styles-mern_stack.scss";
 import reportWebVitals from './reportWebVitals';
-
+// import '@fontsource/gidugu';
+import "./i18n";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

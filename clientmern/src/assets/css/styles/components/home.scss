@@ -2,17 +2,18 @@
 
 @import "../vendors/variables.scss";
 @import "./header.scss";
+
 // * {
 //     margin: 0;
 //     padding: 0;
 // }
-*{
+* {
     box-sizing: border-box;
-
 }
 body {
     // background: #9dc0d4;
     // background: url("../../../images/Login/loginbg.webp");
+    font-family: "TeluguFonts";
 }
 
 // login page
@@ -51,7 +52,7 @@ body {
                     }
                     .form .form_footer button {
                         padding: 1.2vh;
-                        width: 90px;
+                        width: auto;
                         color: aliceblue;
                         background-color: rgb(44, 101, 207);
                         border-radius: 10px;
@@ -118,20 +119,18 @@ body {
 .Contact-Page {
     .Contact-Page-section {
         .Contact-Page-container {
-            .Contact-Page-content{
-                .Contact-Page-header{
-                    h1{
-                      background-color: rgb(122, 122, 121);  
-                      height: 60px;
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
+            .Contact-Page-content {
+                .Contact-Page-header {
+                    h1 {
+                        background-color: rgb(122, 122, 121);
+                        height: 60px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                     }
                 }
-                .Contact-Page-body{
-                    
+                .Contact-Page-body {
                 }
-
             }
         }
     }
