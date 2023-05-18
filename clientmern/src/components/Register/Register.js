@@ -25,13 +25,14 @@ const Register = () => {
         if (username !== "" && password !== "") {
             const headers = {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer TOKEN_HERE'
+                'Authorization': 'Bearer TOKEN_HERE',
+                "Accept": 'application/json'
             };
             const obj = {
                 username: username,
                 password: password
             }
-            axios.post("http://localhost:4000/register", obj, {
+            axios.post("http://localhost:8000/register", obj, {
                 headers: headers
             })
                 .then(res => {

@@ -26,7 +26,9 @@ const UserModel = require("./models/User");
 const app = express();
 
 // using the CORS to avoid the Errors.
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:8000',
+}));
 
 //  when we get the request from API it is in the form of object so it throughs the error
 //  So we need to conver that data into json  format by using below app.use(express.json()); function
@@ -83,7 +85,7 @@ app.post("/login", async (req, res) => {
 
 
 
-app.listen(4000, () => console.log('Server started on port 4000'));
+app.listen(8000, () => console.log('Server started on port 8000'));
 
 // mongodb+srv://dharasaikumar9849:Pe9T3Rjq6XF7JQMV@cluster0.1uyayv7.mongodb.net/test
 // mongodb+srv://dharasaikumar9849:Pe9T3Rjq6XF7JQMV@cluster0.1uyayv7.mongodb.net/?retryWrites=true&w=majority

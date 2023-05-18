@@ -7,7 +7,7 @@ import axios from 'axios'
 const Home = () => {
 
     useEffect(() => {
-        axios.get("http://localhost:4000/user")
+        axios.get("http://localhost:8000/user")
             .then(res => {
                 console.log(res);
             })
