@@ -13,6 +13,8 @@ const salt = bcrypt.genSaltSync(10);
 const jwt = require('jsonwebtoken');
 const secret = "shjvdjbcjbjchbejmbj";
 
+
+
 //  to avoid the error from CORS requests we need to install npm i cors 
 const cors = require('cors');
 
@@ -27,12 +29,19 @@ const app = express();
 
 // using the CORS to avoid the Errors.
 app.use(cors({
+    credentials: true,
     origin: 'http://localhost:8000',
 }));
 
 //  when we get the request from API it is in the form of object so it throughs the error
 //  So we need to conver that data into json  format by using below app.use(express.json()); function
 app.use(express.json());
+
+// cookie-parser is used to the authentication to check the valid token or not.
+const cookieParser = require('cookie-parser');
+
+// cookie-parser =>  we can read the cookies whixh are inside of the API headers.
+app.use(cookieParser());
 
 //  need to use the drivers link for  connection to the mongoose server.
 //  and nned to pass the our db location like merndb  after the .mongodb.net/merndb?retryWrites .. like this
@@ -68,21 +77,39 @@ app.post('/register', async (req, res) => {
 
 // Login API POST method
 
-app.post("/login", async (req, res) => {
+app.post('/login', async (req, res) => {
     const { username, password } = req.body;
-    const user = await UserModel.findOne({ username });
-    const passwordSuccess = bcrypt.compareSync(password, user.password)
-    if (passwordSuccess) {
-        // return res.json({ message: passwordSuccess });
-        jwt.sign({ username, id: UserModel._id }, secret, {}, (err, token) => {
-            if (err) throw err;
-            res.json({ "token": token, message: "Logged in successfully" })
-        })
-    } else {
-        return res.status(401).json({ error: "Invalid email or password", message: "Invalid email or password" });
+    try {
+        const user = await UserModel.findOne({ username });
+        if (!user) {
+            return res.status(401).json({ error: 'Invalid username or password', message: 'Invalid username or password' });
+        }
+        const passwordMatch = await bcrypt.compare(password, user.password);
+        if (!passwordMatch) {
+            return res.status(401).json({ error: 'Invalid username or password', message: 'Invalid username or password' });
+        }
+        const token = jwt.sign({ username, id: user._id }, secret);
+        console.log("token: ", token);
+        res.cookie('token', token, { httpOnly: true });
+        res.json({ token, message: 'Logged in successfully' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error', message: 'Failed to login' });
     }
-})
+});
 
+
+app.get('/profile', (req, res) => {
+    res.json(req.cookies);
+    console.log("req.cookies: ", req.cookies);
+    debugger;
+    const { token } = req.cookies;
+    jwt.verify(token, secret, {}, (err, info) => {
+        if (err) throw err;
+        res.json(info);
+        res.status(200).json({ message: "OK" })
+    })
+})
 
 
 app.listen(8000, () => console.log('Server started on port 8000'));
@@ -92,6 +119,4 @@ app.listen(8000, () => console.log('Server started on port 8000'));
 //   mongodb+srv://dharasaikumar9849:Pe9T3Rjq6XF7JQMV@cluster0.1uyayv7.mongodb.net/test
 //   mongodb+srv://dharasaikumar9849:Pe9T3Rjq6XF7JQMV@cluster0.1uyayv7.mongodb.net/test
 // Pe9T3Rjq6XF7JQMV password for mongodb
-
-
 

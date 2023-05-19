@@ -9,12 +9,25 @@ const Home = () => {
     useEffect(() => {
         axios.get("http://localhost:8000/user")
             .then(res => {
-                console.log(res);
+                console.log("userS", res);
             })
             .catch(error => {
                 console.log("error: ", error);
 
             })
+
+        axios.get("http://localhost:8000/profile", {
+            credentials: 'include',
+        })
+            .then(res => {
+                console.log("-profiletoken", res);
+            })
+            .catch(error => {
+                console.log("error: ", error);
+
+            });
+
+
     }, [])
     return (
         <React.Fragment>
