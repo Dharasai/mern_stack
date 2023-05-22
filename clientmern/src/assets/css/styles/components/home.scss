@@ -70,15 +70,17 @@ body {
 //  register page
 
 .register-page {
+    // background-image: url("../../../images/Header/");
     .register-section {
         .container {
-            background-color: $whiteColor;
             margin: auto;
-            margin-top: 35vh;
-            width: 400px;
-            height: 400px;
+            margin-top: 20vh;
+            margin-bottom: 20vh;
+            width: 500px;
+            height: auto;
             border-radius: 10px;
-
+            background-color: rgb(129, 230, 109);
+            box-shadow: 10px 10px 5px lightblue;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -87,22 +89,30 @@ body {
                 .register-header {
                     margin-left: 30vh;
                     padding: 22px;
-                    color: rgb(190, 68, 84);
+                    color: rgb(255, 11, 72);
                     font-size: large;
                     font-weight: 700;
                 }
                 .register-body {
-                    .form input {
-                        margin: 1.8vh;
-                        padding: 1.5vh;
-                        border-radius: 5px;
-                    }
-                    .form .form_footer button {
-                        padding: 1.2vh;
-                        width: 90px;
-                        color: aliceblue;
-                        background-color: rgb(44, 101, 207);
-                        border-radius: 10px;
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    .form .form_content {
+                        width: 100%;
+                        input {
+                            padding: 1.5vh;
+                            border-radius: 5px;
+                            width: 100%;
+                            margin: 0 0 2vh 0;
+                        }
+                        button {
+                            padding: 1.2vh;
+                            width: 100%;
+                            color: aliceblue;
+                            background-color: rgb(99, 154, 206);
+                            border-radius: 10px;
+                            margin-bottom: 4vh;
+                        }
                     }
                     .form .register-body-header {
                         font-size: x-large;
@@ -131,6 +141,27 @@ body {
                 }
                 .Contact-Page-body {
                 }
+            }
+        }
+    }
+}
+
+// create post page
+
+.create-post-Page {
+    .create-Post-Section {
+        width: 0;
+        height: 0;
+        .container {
+            .create-Post-Header .create-post-title {
+                font-size: 24px;
+            }
+            .create-Post-Body .form {
+                background-color: rgb(168, 201, 230);
+                width: 400px;
+                height: 500px;
+                display: flex;
+                justify-content: center;
             }
         }
     }

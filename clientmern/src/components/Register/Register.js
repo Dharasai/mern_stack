@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import Header from '../Header/Header';
 const Register = () => {
 
     const navigate = useNavigate();
 
-    const [username, setUserName] = useState("");
+    const [userName, setUserName] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [mobileNo, setMobileNo] = useState("");
+    const [pincode, setPincode] = useState("");
     const [status, setStatus] = useState();
 
     useEffect(() => {
@@ -20,16 +24,16 @@ const Register = () => {
 
     const submithandler = () => {
         console.log("password: ", password);
-        console.log("userName: ", username);
+        console.log("userName: ", userName);
 
-        if (username !== "" && password !== "") {
+        if (userName !== "" && password !== "") {
             const headers = {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer TOKEN_HERE',
                 "Accept": 'application/json'
             };
             const obj = {
-                username: username,
+                username: userName,
                 password: password
             }
             axios.post("http://localhost:8000/register", obj, {
@@ -56,6 +60,7 @@ const Register = () => {
             {/* body 2*/}
             {/* footer 3*/}
             <div className="register-page">
+                <Header />
                 <div className="register-section">
                     <div className="container">
                         <div className="register-content">
@@ -72,8 +77,8 @@ const Register = () => {
                                             <input
                                                 type="text"
                                                 placeholder='email'
-                                                value={username}
-                                                onChange={(e) => setUserName(e.target.value)} />
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)} />
                                         </div>
                                         <div className="password-input">
                                             <input
@@ -83,8 +88,32 @@ const Register = () => {
                                                 onChange={(e) => setPassword(e.target.value)}
                                             />
                                         </div>
-                                    </div>
-                                    <div className="form_footer">
+                                        <div className="password-input">
+                                            <input
+                                                type="username"
+                                                placeholder='username'
+                                                value={userName}
+                                                onChange={(e) => setUserName(e.target.value)}
+                                            />
+                                        </div>
+                                        <div className="password-input">
+                                            <input
+                                                type="pincode"
+                                                placeholder='pincode'
+                                                value={pincode}
+                                                maxLength={6}
+                                                onChange={(e) => setPincode(e.target.value)}
+                                            />
+                                        </div>
+                                        <div className="password-input">
+                                            <input
+                                                type="number"
+                                                placeholder='Mobile No...'
+                                                value={mobileNo}
+                                                maxLength={10}
+                                                onChange={(e) => setMobileNo(e.target.value)}
+                                            />
+                                        </div>
                                         <button className="register-btn" onClick={submithandler}>Register </button>
                                     </div>
                                 </div>
