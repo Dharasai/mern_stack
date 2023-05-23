@@ -1,6 +1,14 @@
 // importing the express 
 const express = require('express');
 
+
+// npm i dotenv => is access to fetch the value of port from the environment variable file
+// with the help of a process module which is core module of the nodejs.
+const dotenv = require('dotenv').config();
+
+const errorHandler = require("./middleware/errorHandler");
+const port = process.env.PORT || 8000;
+
 // backcryptjs is used for securing authentication of user from hackers 
 // it will create a string kind and of unique data which conects to the user password.
 // And along with this it needs "salt" which is the string.
@@ -27,6 +35,10 @@ const UserModel = require("./models/User");
 //  for creating the API 's we need to convert the express function to variable as shown below.
 const app = express();
 
+// Error Handling using middleware
+app.use(errorHandler);
+
+
 // using the CORS to avoid the Errors.
 app.use(cors({
     credentials: true,
@@ -39,13 +51,15 @@ app.use(express.json());
 
 // cookie-parser is used to the authentication to check the valid token or not.
 const cookieParser = require('cookie-parser');
+const connectDb = require('./config/dbConnection');
 
 // cookie-parser =>  we can read the cookies whixh are inside of the API headers.
 app.use(cookieParser());
 
 //  need to use the drivers link for  connection to the mongoose server.
 //  and nned to pass the our db location like merndb  after the .mongodb.net/merndb?retryWrites .. like this
-mongoose.connect('mongodb+srv://dharasaikumar9849:Pe9T3Rjq6XF7JQMV@cluster0.1uyayv7.mongodb.net/merndb?retryWrites=true&w=majority');
+// mongoose.connect('mongodb+srv://dharasaikumar9849:Pe9T3Rjq6XF7JQMV@cluster0.1uyayv7.mongodb.net/merndb?retryWrites=true&w=majority');
+connectDb();
 
 //  need to use then and catch for handling the error and requests.
 //  Only for GET API  => find() is used for get the data from the data base.
@@ -111,8 +125,11 @@ app.get('/profile', (req, res) => {
     })
 })
 
+//  POSTS 
+// app.use() is the middleware for the API
+app.use('/api/posts', require("./routes/postsRoutes"));
 
-app.listen(8000, () => console.log('Server started on port 8000'));
+app.listen(port, () => console.log(`Server started on port ${port}`));
 
 // mongodb+srv://dharasaikumar9849:Pe9T3Rjq6XF7JQMV@cluster0.1uyayv7.mongodb.net/test
 // mongodb+srv://dharasaikumar9849:Pe9T3Rjq6XF7JQMV@cluster0.1uyayv7.mongodb.net/?retryWrites=true&w=majority
