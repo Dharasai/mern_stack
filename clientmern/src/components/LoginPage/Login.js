@@ -9,7 +9,7 @@ const Login = () => {
     const passwordref = useRef();
 
     const handleSubmit = () => {
-     
+
         const email = usernameref.current.value;
         const password = passwordref.current.value;
         if (email !== "" && password !== "") {
@@ -18,21 +18,20 @@ const Login = () => {
                 'Authorization': 'Bearer TOKEN_HERE'
             };
             const obj = {
-                email: email,
+                username: email,
                 password: password
             }
-            axios.post("http://localhost:4000/login", {
-                headers,
-                obj
+            axios.post("http://localhost:4000/login", obj, {
+                headers: headers,
             })
-            .then(res => {
-                console.log(res);
-                navigate('/home');
-            })
-            .catch(error =>{
-                console.log("error: ", error);
+                .then(res => {
+                    console.log(res);
+                    navigate('/home');
+                })
+                .catch(error => {
+                    console.log("error: ", error);
 
-            })
+                })
         }
     }
 
@@ -51,7 +50,7 @@ const Login = () => {
                     <div className='Login-Page-container'>
                         <div className='Login-Page-content'>
                             <div className='login-header'>
-                                <div className='close-icon'>
+                                <div className='close-icon' style={{ "display": "none" }}>
                                     <Link to="/home">
                                         Close
                                     </Link>
@@ -59,7 +58,7 @@ const Login = () => {
                             </div>
                             <div className='login-body'>
                                 <div className="form">
-                                <div className="login-body-header">
+                                    <div className="login-body-header">
                                         Login
                                     </div>
                                     <div className='form_content'>

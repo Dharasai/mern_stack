@@ -1,4 +1,17 @@
+// importing the express 
 const express = require('express');
+
+// backcryptjs is used for securing authentication of user from hackers 
+// it will create a string kind and of unique data which conects to the user password.
+// And along with this it needs "salt" which is the string.
+const bcrypt = require('bcryptjs');
+
+// salt => random string
+const salt = bcrypt.genSaltSync(10);
+
+// Install => jsonwebtoken for the authentication purpose
+const jwt = require('jsonwebtoken');
+const secret = "shjvdjbcjbjchbejmbj";
 
 //  to avoid the error from CORS requests we need to install npm i cors 
 const cors = require('cors');
@@ -39,26 +52,34 @@ app.get("/user", (req, res) => {
 //  register API POST method
 app.post('/register', async (req, res) => {
     const { username, password } = req.body;
-    const userDoc = await UserModel.create({ username, password });
-    res.json(userDoc);
-    // res.json({});
+    try {
+        const userDoc = await UserModel.create({
+            username,
+            password: bcrypt.hashSync(password, salt),
+        });
+        res.json({ user: userDoc, message: "registered successfully" });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Internal Server Error', message: "Failed to register user" });
+    }
 });
 
 // Login API POST method
-app.post('/login', async (req, res) => {
-    const {email,password} = req.body;
-    const userDoc = await UserModel.create({ email, password });
-    res.json(userDoc);
-});
-// res.json({ requestData: { email, password } });
 
-app.post('/signin', async (req, res) => {
-    const user = req.body;
-    const newUser = new UserModel(user);
-    await newUser.save();
-    res.json(user);
-    // res.json({ requestData: { email, password } });
-});
+app.post("/login", async (req, res) => {
+    const { username, password } = req.body;
+    const user = await UserModel.findOne({ username });
+    const passwordSuccess = bcrypt.compareSync(password, user.password)
+    if (passwordSuccess) {
+        // return res.json({ message: passwordSuccess });
+        jwt.sign({ username, id: UserModel._id }, secret, {}, (err, token) => {
+            if (err) throw err;
+            res.json({ "token": token, message: "Logged in successfully" })
+        })
+    } else {
+        return res.status(401).json({ error: "Invalid email or password", message: "Invalid email or password" });
+    }
+})
 
 
 
