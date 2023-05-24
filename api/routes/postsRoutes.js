@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const { getPosts, getPost, createPost, updatePosts, deletePosts } = require("../controllers/postsController");
+const validateToken = require('../middleware/validateTokenHandler');
 
 
 
@@ -12,6 +13,8 @@ const { getPosts, getPost, createPost, updatePosts, deletePosts } = require("../
 // POST METHOD for Cretae the posts in DB
 // router.route("/").post(createPost);
 
+// It will add the validation for all the posts API methods.
+router.use(validateToken);
 
 // @ if the URL is same for two API"S we can also write it in short format like below. !important
 router.route("/").get(getPosts).post(createPost);

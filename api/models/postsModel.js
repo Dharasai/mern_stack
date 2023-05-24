@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 
 const postsSchema = mongoose.Schema(
     {
+        user_id: {
+            type: mongoose.Schema.Types.ObjectId,
+            required: true,
+            ref: "Post"
+        },
         name: {
             type: String,
             required: [true, "Please add the name"],
@@ -24,4 +29,4 @@ const postsSchema = mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model("Posts", postsSchema)
+module.exports = mongoose.model("Posts", postsSchema);

@@ -3,15 +3,15 @@ const Posts = require("../models/postsModel");
 
 //@description Get all posts
 // @route GET /api/posts
-//@access public
+//@access private
 const getPosts = asyncHandler(async (req, res) => {
-    const posts = await Posts.find();
+    const posts = await Posts.find({ user_id: req.user.id });
     res.status(200).json(posts);
 })
 
 //@description Get single post
 // @route GET /api/posts/:id
-//@access public
+//@access private
 const getPost = asyncHandler(async (req, res) => {
     const post = await Posts.findById(req.params.id)
     if (!post) {
@@ -23,7 +23,7 @@ const getPost = asyncHandler(async (req, res) => {
 
 //@description Create a New post
 // @route POST /api/posts
-//@access public
+//@access private
 const createPost = asyncHandler(async (req, res) => {
     console.log("req: ", req.body);
     const { name, email, password, mobileno } = req.body;
@@ -43,7 +43,7 @@ const createPost = asyncHandler(async (req, res) => {
 
 //@description Update a post
 // @route PUT /api/posts/id
-//@access public
+//@access private
 const updatePosts = asyncHandler(async (req, res) => {
     const post = await Posts.findById(req.params.id);
     if (!post) {
@@ -62,7 +62,7 @@ const updatePosts = asyncHandler(async (req, res) => {
 
 //@description Delete a post
 // @route Delete /api/posts/id
-//@access public
+//@access private
 const deletePosts = asyncHandler(async (req, res) => {
     const post = await Posts.findById(req.params.id);
     if (!post) {

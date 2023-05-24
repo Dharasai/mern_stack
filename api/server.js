@@ -61,7 +61,7 @@ app.use(cookieParser());
 // mongoose.connect('mongodb+srv://dharasaikumar9849:Pe9T3Rjq6XF7JQMV@cluster0.1uyayv7.mongodb.net/merndb?retryWrites=true&w=majority');
 connectDb();
 
-//  need to use then and catch for handling the error and requests.
+//  need to use then or try and catch for handling the error and requests.
 //  Only for GET API  => find() is used for get the data from the data base.
 
 app.get("/user", (req, res) => {
@@ -128,6 +128,7 @@ app.get('/profile', (req, res) => {
 //  POSTS 
 // app.use() is the middleware for the API
 app.use('/api/posts', require("./routes/postsRoutes"));
+app.use('/api/account', require("./routes/accountRoutes"));
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
 
