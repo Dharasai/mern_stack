@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from "../../assets/images/Header/slogo.avif";
+import logo from "../../assets/images/Header/logoos.png";
 const Header = () => {
     return (
         <React.Fragment>
@@ -17,6 +17,11 @@ const Header = () => {
                                         <li className='nav-item'>
                                             <Link to="/home">
                                                 Home
+                                            </Link>
+                                        </li>
+                                        <li className='nav-item'>
+                                            <Link to="/layout">
+                                                LayOut
                                             </Link>
                                         </li>
                                         <li className='nav-item'>

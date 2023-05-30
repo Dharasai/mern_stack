@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Header from '../Header/Header'
-import axios from 'axios'
+// import axios from 'axios';
 import CreatePost from '../CreatePost/CreatePost'
 // import Login from '../LoginPage/Login'
 // import SideBar from '../SideBar/SideBar'
@@ -8,25 +8,25 @@ import CreatePost from '../CreatePost/CreatePost'
 const Home = () => {
 
     useEffect(() => {
-        axios.get("http://localhost:8000/user")
-            .then(res => {
-                console.log("userS", res);
-            })
-            .catch(error => {
-                console.log("error: ", error);
+        // axios.get("http://localhost:8000/user")
+        //     .then(res => {
+        //         console.log("userS", res);
+        //     })
+        //     .catch(error => {
+        //         console.log("error: ", error);
 
-            })
+        //     })
 
-        axios.get("http://localhost:8000/profile", {
-            credentials: 'include',
-        })
-            .then(res => {
-                console.log("-profiletoken", res);
-            })
-            .catch(error => {
-                console.log("error: ", error);
+        // axios.get("http://localhost:8000/profile", {
+        //     credentials: 'include',
+        // })
+        //     .then(res => {
+        //         console.log("-profiletoken", res);
+        //     })
+        //     .catch(error => {
+        //         console.log("error: ", error);
 
-            });
+        //     });
 
 
     }, [])
