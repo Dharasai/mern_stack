@@ -1,20 +1,34 @@
 import React, { useEffect } from 'react'
 import Header from '../Header/Header'
 import axios from 'axios'
+import CreatePost from '../CreatePost/CreatePost'
 // import Login from '../LoginPage/Login'
 // import SideBar from '../SideBar/SideBar'
 
 const Home = () => {
 
     useEffect(() => {
-        axios.get("http://localhost:4000/user")
+        axios.get("http://localhost:8000/user")
             .then(res => {
-                console.log(res);
+                console.log("userS", res);
             })
             .catch(error => {
                 console.log("error: ", error);
 
             })
+
+        axios.get("http://localhost:8000/profile", {
+            credentials: 'include',
+        })
+            .then(res => {
+                console.log("-profiletoken", res);
+            })
+            .catch(error => {
+                console.log("error: ", error);
+
+            });
+
+
     }, [])
     return (
         <React.Fragment>
@@ -32,15 +46,10 @@ const Home = () => {
                 <div className="home-section">
                     <div className="home-container">
                         <div className="home-content">
-                            <div className='content-header'>
-                                Home
-                            </div>
                             <div className='content-body'>
-                                body
+                                <CreatePost />
                             </div>
-                            <div className='content-footer'>
-                                footer
-                            </div>
+
                         </div>
                     </div>
                 </div>
