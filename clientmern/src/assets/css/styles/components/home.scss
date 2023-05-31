@@ -149,20 +149,24 @@ body {
 // create post page
 
 .create-post-Page {
-    .create-Post-Section {
-        width: 0;
-        height: 0;
-        .container {
-            .create-Post-Header .create-post-title {
-                font-size: 24px;
-            }
-            .create-Post-Body .form {
-                background-color: rgb(168, 201, 230);
-                width: 400px;
-                height: 500px;
-                display: flex;
-                justify-content: center;
-            }
+    background-color: rgb(128, 233, 96);
+    width: 100%;
+    height: 100%;
+    .container {
+        background-color: rgb(96, 183, 233);
+        width: 600px;
+        display: grid;
+        place-items: center;
+        position: absolute;
+        // height: 100vh;
+        .create-Post-Header .create-post-title {
+            font-size: 24px;
+        }
+        .create-Post-Body .form {
+            width: 400px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
         }
     }
 }
