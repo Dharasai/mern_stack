@@ -1,8 +1,105 @@
+// Banner Scss Style
+@import "../vendors/variables.scss";
 .banner-section {
     .Blog-Banner-Main {
         .container {
             .banner-content {
-                
+                img {
+                    width: 100%;
+                    height: 400px;
+                    object-fit: cover;
+
+                    @media (max-width: #{$mobile}) {
+                        height: auto;
+                    }
+                    @media (min-width: #{$mobile + 1}) and (max-width: #{$tablet}) {
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Benifits scss styles
+
+.benifits-section {
+    .benifits-MainPage {
+        background-color: white;
+        .container {
+            .benifits-content {
+                display: flex;
+                width: 100%;
+                .benifits-content-left {
+                    flex: 1 1 50%;
+                    .title-name {
+                        color: aqua;
+                        font-size: 24px;
+                    }
+                    .subtitle-name {
+                        color: black;
+                        font-size: 36px;
+                    }
+                    @media (max-width: #{$mobile}) {
+                        flex: 1 1 100%;
+                    }
+                    @media (min-width: #{$mobile + 1}) and (max-width: #{$tablet}) {
+                        flex: 1 1 100%;
+                    }
+                }
+                .benifits-content-right {
+                    div {
+                        color: black;
+                        font-size: x-large;
+                        margin: 20px;
+                    }
+                }
+                @media (max-width: #{$mobile}) {
+                    flex-direction: column;
+                }
+                @media (min-width: #{$mobile + 1}) and (max-width: #{$tablet}) {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
+
+// Services-section
+
+.services-section {
+    .services-MainPage {
+        .container {
+            .services-content {
+                ul {
+                    display: flex;
+                    justify-content: center;
+                    list-style: none;
+                    flex-wrap: wrap;
+                    gap: 5px;
+                    li {
+                        // display: block;
+                        flex-direction: column;
+                        width: 22%;
+                        max-width: 22%;
+                        flex:1 1 25%;
+                        height: auto;
+                        // margin: 10px;
+                        padding: 5px;
+                        border: 1px solid black;
+                        .Card {
+                            .card-Icon {
+                                color: rgb(47, 180, 135);
+                            }
+                            .card-Title {
+                                color: rgb(77, 153, 77);
+                            }
+                            .card-Footer {
+                                color: rgb(82, 168, 82);
+                            }
+                        }
+                    }
+                }
             }
         }
     }

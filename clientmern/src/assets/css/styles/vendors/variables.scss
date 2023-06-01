@@ -14,5 +14,74 @@ $mobile: 576px;
 $tablet: 768px;
 $desktop: 992px;
 
+$SB-mobileDevice-minWidth: 300px;
+$SB-mobileDevice-maxWidth: 767px;
+$SB-mediaQueryRange-mobileDevice: "(min-width: #{$SB-mobileDevice-minWidth}) and (max-width: #{$SB-mobileDevice-maxWidth})";
+@media screen and #{$SB-mediaQueryRange-mobileDevice} {
+   
+}
 
+$SB-desktopDevice-minWidth: 1241px;
+$SB-mediaQueryRange-desktopDevice: "(min-width: #{$SB-desktopDevice-minWidth})";
+@media screen and #{$SB-mediaQueryRange-desktopDevice} {
+   
+}
+
+$SB-mobileLayout-minWidth: 300px;
+$SB-mobileLayout-maxWidth: 1023px;
+$SB-mediaQueryRange-mobileLayout: "(min-width: #{$SB-mobileLayout-minWidth}) and (max-width: #{$SB-mobileLayout-maxWidth})";
+@media screen and #{$SB-mediaQueryRange-mobileLayout} {
+   
+}
+
+$SB-specialDevice-width: 300px;
+$SB-mediaQueryRange-specialDevice: "(max-width: #{$SB-specialDevice-width})";
+@media screen and #{$SB-mediaQueryRange-specialDevice} {
+   
+}
+
+$SB-smallMobileDevice-minWidth: 320px;
+$SB-smallMobileDevice-maxWidth: 375px;
+$SB-mediaQueryRange-smallMobileDevice: "(min-width: #{$SB-smallMobileDevice-minWidth}) and (max-width: #{$SB-smallMobileDevice-maxWidth})";
+@media screen and #{$SB-mediaQueryRange-smallMobileDevice} {
+   
+}
+
+$SB-mobileDevice-minWidth: 200px;
+$SB-mobileDevice-maxWidth: 767px;
+$SB-mediaQueryRange-mobileDevice: "(min-width: #{$SB-mobileDevice-minWidth}) and (max-width: #{$SB-mobileDevice-maxWidth})";
+@media screen and #{$SB-mediaQueryRange-mobileDevice} {
+   
+}
+
+$SB-tabletDevice-minWidth: 768px;
+$SB-tabletDevice-maxWidth: 1023px;
+$SB-mediaQueryRange-tabletDevice: "(min-width: #{$SB-tabletDevice-minWidth}) and (max-width: #{$SB-tabletDevice-maxWidth})";
+@media screen and #{$SB-mediaQueryRange-tabletDevice} {
+   
+}
+
+$SB-desktoLowDevice-minWidth: 1024px;
+$SB-desktoLowDevice-maxWidth: 1200px;
+$SB-mediaQueryRange-desktoLowDevice: "(min-width: #{$SB-desktoLowDevice-minWidth}) and (max-width: #{$SB-desktoLowDevice-maxWidth})";
+@media screen and #{$SB-mediaQueryRange-desktoLowDevice} {
+}
+
+$SB-desktopMediumDevice-minWidth: 1024px;
+$SB-desktopMediumDevice-maxWidth: 1365px;
+$SB-mediaQueryRange-desktopMediumDevice: "(min-width: #{$SB-desktopMediumDevice-minWidth}) and (max-width: #{$SB-desktopMediumDevice-maxWidth})";
+@media screen and #{$SB-mediaQueryRange-desktopMediumDevice} {
+}
+
+$SB-desktopDevice-minWidth: 1024px;
+$SB-mediaQueryRange-desktopDevice: "(min-width: #{$SB-desktopDevice-minWidth})";
+@media screen and #{$SB-mediaQueryRange-desktopDevice} {
+   
+}
+
+$SB-desktopLargeDevice-minWidth: 1366px;
+$SB-desktopLargeDevice-maxWidth: 1599px;
+$SB-mediaQueryRange-desktopLargeDevice: "(min-width: #{$SB-desktopLargeDevice-minWidth}) and (max-width: #{$SB-desktopLargeDevice-maxWidth})";
+@media screen and #{$SB-mediaQueryRange-desktopLargeDevice} {
+}
 

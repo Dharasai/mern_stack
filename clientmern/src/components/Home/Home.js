@@ -7,6 +7,8 @@ import SideMenu from '../SideMenu/SideMenu';
 import { useSelector } from 'react-redux';
 import Footer from '../Footer/Footer';
 import BlogBanner from '../Banners/BlogBanner';
+import Benifits from '../Benifits/Benifits';
+import Services from '../Services/Services';
 // import Login from '../LoginPage/Login';
 // import SideBar from '../SideBar/SideBar';
 
@@ -64,6 +66,12 @@ const Home = () => {
                 </div>
                 <div className='banner-section'>
                     <BlogBanner />
+                </div>
+                <div className='benifits-section'>
+                    <Benifits />
+                </div>
+                <div className='services-section'>
+                    <Services />
                 </div>
                 <div className='Footer'>
                     <Footer />
