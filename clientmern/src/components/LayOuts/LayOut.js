@@ -1,7 +1,8 @@
 import React from 'react'
-import Header from '../Header/Header'
+// import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import cart_Banner from '../../assets/images/Banners/shoppingcart_banner.jpg'
+import Header1 from '../Header/Header1'
 const LayOut = () => {
     return (
         <React.Fragment>
@@ -9,7 +10,8 @@ const LayOut = () => {
                 <div className="LayOut-section">
                     <div className="container">
                         <div className='layout-Header'>
-                            <Header />
+                            {/* <Header /> */}
+                            <Header1 />
                         </div>
                     </div>
                 </div>
