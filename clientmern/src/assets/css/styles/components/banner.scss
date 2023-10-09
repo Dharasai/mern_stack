@@ -1,8 +1,15 @@
 .banner-section {
+    margin-top: 20px;
     .Blog-Banner-Main {
         .container {
             .banner-content {
-                
+                width: auto;
+                .banner {
+                    box-sizing: border-box;
+                    position: relative;
+                    width: 100%;
+                    overflow: hidden;
+                }
             }
         }
     }
