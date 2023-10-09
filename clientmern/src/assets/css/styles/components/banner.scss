@@ -3,12 +3,16 @@
     .Blog-Banner-Main {
         .container {
             .banner-content {
-                width: auto;
-                .banner {
-                    box-sizing: border-box;
-                    position: relative;
-                    width: 100%;
-                    overflow: hidden;
+                .splide__list {
+                    .splide__slide {
+                        flex: none;
+                        .banner {
+                            img {
+                                max-width: 100%;
+                                height: auto;
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -20,9 +20,7 @@ const BlogBanner = () => {
                                 // focus: 'center',
                                 speed: 1,
                                 autoStart: true,
-                                // rewindtrue: true,
-                                pauseOnHover: true,
-                                pauseOnFocus: true,
+
                             }}>
                             <SplideTrack>
                                 {bannerPageData && bannerPageData?.map((item) => {
@@ -34,8 +32,6 @@ const BlogBanner = () => {
                                         </SplideSlide>
                                     )
                                 })}
-
-
                             </SplideTrack>
                         </Splide>
                     </div>
