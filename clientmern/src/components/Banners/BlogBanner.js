@@ -15,7 +15,7 @@ const BlogBanner = () => {
                             options={{
                                 perPage: 1,
                                 pagination: false,
-                                // type: 'loop',
+                                type: 'loop',
                                 // drag: 'free',
                                 // focus: 'center',
                                 speed: 1,
