@@ -4,7 +4,7 @@ import logo from "../../assets/images/Header/logoos.png";
 const Header = () => {
     return (
         <React.Fragment>
-            <div className='Header'>
+            <div className='Header-main'>
                 <div className='header-section'>
                     <div className='header-container'>
                         <div className='header-content'>

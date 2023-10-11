@@ -1,0 +1,20 @@
+.banner-section {
+    margin-top: 20px;
+    .Blog-Banner-Main {
+        .container {
+            .banner-content {
+                .splide__list {
+                    .splide__slide {
+                        flex: none;
+                        .banner {
+                            img {
+                                max-width: 100%;
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

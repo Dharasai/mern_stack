@@ -1,0 +1,54 @@
+.Side-Menu {
+    &.Open{
+        background-color: #2b3238;
+        top: 0;
+        right: 0;
+        max-width: 280px;
+        z-index: 1;
+        position: absolute;
+        width: 280px;
+        height: 100vh;
+    }
+
+    &.Close{
+        display: none;
+    }
+    .side-Menu-main {
+        .container {
+            .sideMenu-content {
+                .menu-close-Icon {
+                    width: 80px;
+                    color: white;
+                    font-size: xx-large;
+                    border: 1px solid white;
+                    border-radius: 5px;
+                    margin: 25px;
+                    &:hover{
+                        color: rgb(91, 145, 216);
+                    }
+                }
+                .sideMenu-Services {
+                    ul {
+                        list-style: none;
+                        li {
+                            color: white;
+                            font-size: 3vh;
+                            margin: 5px;
+                        }
+                    }
+                }
+                .sideMenu-SocialMediaIcons {
+                    ul {
+                        list-style: none;
+                        li {
+                            color: white;
+                            font-size: 4vh;
+                            margin: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

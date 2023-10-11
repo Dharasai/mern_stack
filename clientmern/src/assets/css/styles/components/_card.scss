@@ -1,0 +1,52 @@
+.main_men_shirts {
+    background-color: rgb(245, 245, 245);
+}
+.splide__list {
+    display: flex;
+    .splide__slide {
+        flex: 1;
+    }
+}
+.slider_wrapper {
+    background-color: rgb(245, 245, 245);
+}
+.card {
+    width: 230px;
+    height: 370px;
+    border-radius: 10px;
+    text-align: start;
+    background-color: white;
+    margin: 12px;
+    .card_content {
+        padding: 10px;
+        font-size: 16px;
+        line-height: 20px;
+        .card_image_box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .card_image {
+                width: 200px;
+                height: 250px;
+                overflow: hidden;
+                margin-top: 10px;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        .card_brand_name {
+            color: black;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .card_price {
+            font-weight: 700;
+        }
+        .card_subtitle {
+            color: black;
+        }
+    }
+}
