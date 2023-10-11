@@ -15,7 +15,7 @@ const Header1 = () => {
                     <div className='header-body'>
                         <div className='header-content'>
                             <div className='header-title'>
-                                Co-working
+                                E-Kart
                             </div>
                             <div className='header-services'>
                                 <ul>

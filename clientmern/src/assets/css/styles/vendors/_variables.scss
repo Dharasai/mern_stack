@@ -1,0 +1,57 @@
+$whiteColor: rgb(255, 255, 255);
+$blackColor: rgb(0, 0, 0);
+$blueColor: #3586ff;
+$AshColor: #a8a2a2;
+$darkBlueColor: #32439b;
+$lightBlueColor: #6679d6;
+$darkRedColor: #de2a2a;
+$lightRedColor: #d93f3f;
+
+// @media Queries: screen
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+
+$mediaQueryRange-smallMobile: "(min-width: 280px) and (max-width: 359px)";
+
+$mediaQueryRange-smallTab: "(min-width: 768px) and (max-width: 459px)";
+
+$mobileLayout-minWidth: 280px;
+$mobileLayout-maxWidth: 459px;
+$mediaQueryRange-midMobileDevice: "(min-width: #{$mobileLayout-minWidth}) and (max-width: #{$mobileLayout-maxWidth})";
+
+$mobileLayout-minWidth: 459px;
+$mobileLayout-maxWidth: 759px;
+$mediaQueryRange-midTabletDevice: "(min-width: #{$mobileLayout-minWidth}) and (max-width: #{$mobileLayout-maxWidth})";
+
+$mobileLayout-minWidth: 280px;
+$mobileLayout-maxWidth: 1273px;
+$mediaQueryRange-mobileLayout: "(min-width: #{$mobileLayout-minWidth}) and (max-width: #{$mobileLayout-maxWidth})";
+
+$mobileDevice-minWidth: 280px;
+$mobileDevice-maxWidth: 767px;
+$mediaQueryRange-mobileDevice: "(min-width: #{$mobileDevice-minWidth}) and (max-width: #{$mobileDevice-maxWidth})";
+
+$mobileDevice-minWidth: 768px;
+$mobileDevice-maxWidth: 1023px;
+$mediaQueryRange-tabletDevice: "(min-width: #{$mobileDevice-minWidth}) and (max-width: #{$mobileDevice-maxWidth})";
+
+$lowDesktopDevice-minWidth: 1024px;
+$lowDesktopDevice-maxWidth: 1279px;
+$mediaQueryRange-lowDesktopDevice: "(min-width: #{$lowDesktopDevice-minWidth}) and (max-width: #{$lowDesktopDevice-maxWidth})";
+
+@media screen and #{$mediaQueryRange-lowDesktopDevice} {
+}
+
+$desktopDevice-minWidth: 1024px;
+$mediaQueryRange-desktopDevice: "(min-width: #{$desktopDevice-minWidth})";
+
+@media screen and #{$mediaQueryRange-desktopDevice} {
+}
+
+$SB-tabletDevice-minWidth: 768px;
+$SB-tabletDevice-maxWidth: 1023px;
+$SB-mediaQueryRange-tabletDevice: "(min-width: #{$SB-tabletDevice-minWidth}) and (max-width: #{$SB-tabletDevice-maxWidth})";
+
+@media screen and #{$SB-mediaQueryRange-tabletDevice} {
+}

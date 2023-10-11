@@ -1,5 +1,4 @@
-@import "../vendors/variables.scss";
-
+@import "../vendors/_variables.scss";
 
 // Header page
 // .Header {
@@ -141,7 +140,7 @@ header {
                         border-radius: 5px;
                         padding: 5px 8px;
                         margin: 15px;
-                        &:hover{
+                        &:hover {
                             color: rgb(91, 145, 216);
                         }
                     }
