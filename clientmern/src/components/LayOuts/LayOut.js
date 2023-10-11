@@ -1,35 +1,40 @@
 import React from 'react'
 // import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-import cart_Banner from '../../assets/images/Banners/shoppingcart_banner.jpg'
 import Header1 from '../Header/Header1'
-const LayOut = () => {
+import SideMenu from '../SideMenu/SideMenu';
+
+import { useSelector } from 'react-redux';
+const LayOut = ({ element }) => {
+
+    const sideMenuToggle = useSelector(state => state.header.sideMenuToggle);
+
+
     return (
         <React.Fragment>
             <div className="LayOut-mainPage">
                 <div className="LayOut-section">
-                    <div className="container">
-                        <div className='layout-Header'>
-                            {/* <Header /> */}
-                            <Header1 />
+                    <div className='Header'>
+                        <Header1 />
+                    </div>
+                    <div className="home-section">
+                        <div className={sideMenuToggle ? 'Side-Menu Open' : 'Side-Menu Close'}>
+                            <SideMenu />
                         </div>
                     </div>
                 </div>
                 <div className="LayOut-section">
                     <div className='layout-Body'>
-                        <div className='container'>
-                            <div className='shopping-cart-banner'>
-                                <img src={cart_Banner} alt='cart_Banner' />
-                            </div>
-                        </div>
+                        {element}
                     </div>
                 </div>
                 <div className="LayOut-section">
                     <div className='layout-Footer'>
-                        <Footer />
+                        <div className='Footer'>
+                            <Footer />
+                        </div>
                     </div>
                 </div>
-
             </div>
         </React.Fragment>
     )

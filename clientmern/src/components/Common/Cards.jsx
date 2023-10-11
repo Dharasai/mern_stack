@@ -1,10 +1,13 @@
 import React from 'react'
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
-const Cards = ({ data }) => {
+const Cards = ({ data, title }) => {
 
     return (
         <React.Fragment>
             <div className='slider_wrapper'>
+                <div className='slider_title'>
+                    <h2>{title}</h2>
+                </div>
                 <Splide hasTrack={false}
                     options={{
                         perPage: 1,
