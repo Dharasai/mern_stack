@@ -1,10 +1,9 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faBars, faMagnifyingGlass, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSideMenuToggle } from './HeaderSlice';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const Header1 = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -16,24 +15,24 @@ const Header1 = () => {
                     <div className='header-body'>
                         <div className='header-content'>
                             <div className='header-title'>
-                                E-Kart
+                                BeOne
                             </div>
                             <div className='header-services'>
                                 <ul>
                                     <li className='header-items' onClick={() => navigate("/home")}>
                                         Home
                                     </li>
-                                    <li className='header-items'>
-                                        Benfits
+                                    <li className='header-items' onClick={() => navigate("/menscollection")}>
+                                        Mens
                                     </li>
-                                    <li className='header-items'>
-                                        About
+                                    <li className='header-items' onClick={() => navigate("/womenscollection")}>
+                                        Womens
                                     </li>
-                                    <li className='header-items'>
-                                        Blog
+                                    <li className='header-items' onClick={() => navigate("/shoescollection")}>
+                                        Shoes
                                     </li>
-                                    <li className='header-items' onClick={() => navigate("/cart")}>
-                                        View
+                                    <li className='header-items' onClick={() => navigate("/trending")}>
+                                        Trending
                                     </li>
                                 </ul>
                             </div>
@@ -41,13 +40,13 @@ const Header1 = () => {
                         <div className='socialmedia-services'>
                             <ul>
                                 <li className='social-Media-Icons'>
-                                    <FontAwesomeIcon icon={faFacebook} />
+                                    <FontAwesomeIcon icon={faMagnifyingGlass} />
                                 </li>
                                 <li className='social-Media-Icons'>
-                                    <FontAwesomeIcon icon={faInstagram} />
+                                    <FontAwesomeIcon icon={faHeart} />
                                 </li>
-                                <li className='social-Media-Icons'>
-                                    <FontAwesomeIcon icon={faTwitter} />
+                                <li className='social-Media-Icons' onClick={() => navigate("/cart")}>
+                                    <FontAwesomeIcon icon={faCartShopping} />
                                 </li>
                             </ul>
                             <div className='sideMenu-Icon'>

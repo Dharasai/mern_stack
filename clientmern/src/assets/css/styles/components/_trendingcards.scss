@@ -1,0 +1,45 @@
+.trending_cards_content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .card {
+        width: 23%;
+        // height: 370px;
+        border-radius: 10px;
+        text-align: start;
+        background-color: white;
+        margin: 12px;
+        .card_content {
+            padding: 10px;
+            font-size: 16px;
+            line-height: 20px;
+            .card_image_box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .card_image {
+                    width: 200px;
+                    height: 250px;
+                    overflow: hidden;
+                    margin-top: 10px;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+            .card_brand_name {
+                color: black;
+                font-weight: 600;
+                font-size: 16px;
+            }
+            .card_price {
+                font-weight: 700;
+            }
+            .card_subtitle {
+                color: black;
+            }
+        }
+    }
+}

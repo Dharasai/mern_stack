@@ -42,23 +42,25 @@ const CartPage = () => {
                         </div>
                         <div className='cart-body'>
                             <div className='product-details'>
-                                <div className='product-description'>
+                                <h3 className='product-description'>
                                     {data?.title}
-                                </div>
+                                </h3>
                             </div>
                             <div className='product-price-details'>
                                 <div className='product-description'>
-                                    {data?.price}
+                                    {"$ " + data?.price}
+                                </div>
+                            </div>
+                            <div className='product-cart-details'>
+                                <div className='product-description'>
+                                    <button className='btn button2'> Add to Cart</button>
+                                </div>
+                                <div className='product-description'>
+                                    <button className='btn button2'> Buy now</button>
                                 </div>
                             </div>
                         </div>
                         <div className='cart-footer'>
-                            <div className='product-cart-details'>
-                                <div className='product-description'>
-                                    <button className='btn '> Add to Cart</button>
-                                    <button className='btn '> Buy now</button>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

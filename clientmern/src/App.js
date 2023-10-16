@@ -12,6 +12,9 @@ import Contact from './components/Contact/Contact';
 import Shop from './components/Shop/Shop';
 import LayOut from './components/LayOuts/LayOut';
 import CartPage from './components/Common/CartPage';
+import WomenCollection from './components/Women/WomenCollection';
+import MensCollection from './components/Men/MensCollection';
+import ShoesCollection from './components/Shoes/ShoesCollection';
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
           <Route path='/shop' element={<Shop />} />
           <Route path='/home' element={<LayOut element={<Home />} />} />
           <Route path='/cart' element={<LayOut element={<CartPage />} />} />
+          <Route path='/menscollection' element={<LayOut element={<MensCollection />} />} />
+          <Route path='/womenscollection' element={<LayOut element={<WomenCollection />} />} />
+          <Route path='/shoescollection' element={<LayOut element={<ShoesCollection />} />} />
         </Routes>
       </BrowserRouter>
     </div>

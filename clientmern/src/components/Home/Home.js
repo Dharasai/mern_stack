@@ -1,12 +1,7 @@
 import React from 'react';
-import BlogBanner from '../Banners/BlogBanner';
-import MenShirts from '../Men/MenShirts';
-import Shoes from '../Shoes/Shoes';
-import MenJeans from '../Men/MenJeans';
-import MenKurtas from '../Men/MenKurtas';
-import Jeans from '../Women/Jeans';
-import Tops from '../Women/Tops';
-import Gouns from '../Women/Gouns';
+import TrendingProducts from '../TrendingProducts/TrendingProducts';
+import HomePageBanner from '../Banners/HomePageBanner';
+
 
 
 const Home = () => {
@@ -25,17 +20,9 @@ const Home = () => {
             <div className='Home-page'>
                 <div className='banner-section'>
                     <div className='container'>
-                        <BlogBanner />
-                        {/* Mens Collection */}
-                        <MenShirts />
-                        <MenJeans />
-                        <MenKurtas />
-                        {/* Shoes */}
-                        <Shoes />
-                        {/* Women collection */}
-                        <Tops />
-                        <Jeans />
-                        <Gouns />
+                        <HomePageBanner />
+                        <TrendingProducts />
+
                     </div>
                 </div>
             </div>
