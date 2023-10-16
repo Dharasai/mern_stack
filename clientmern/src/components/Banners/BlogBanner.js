@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 // import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import { bannerPageData } from '../../APIData/BannerData/women_banner';
@@ -14,6 +14,8 @@ const BlogBanner = () => {
                         <Splide hasTrack={false}
                             options={{
                                 perPage: 1,
+                                type: 'loop',
+                                arrows: false,
                                 pagination: false,
                                 type: 'loop',
                                 // drag: 'free',
