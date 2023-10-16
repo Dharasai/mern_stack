@@ -25,9 +25,9 @@ const BlogBanner = () => {
 
                             }}>
                             <SplideTrack>
-                                {bannerPageData && bannerPageData?.map((item) => {
+                                {bannerPageData && bannerPageData?.map((item, index) => {
                                     return (
-                                        <SplideSlide>
+                                        <SplideSlide key={index}>
                                             <div className='banner'>
                                                 <img src={item?.image} alt="Image 1" />
                                             </div>

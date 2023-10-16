@@ -1,3 +1,64 @@
+@font-face {
+  font-family: "Montserrat", sans-serif;
+  src: url("../../../fonts/Montserrat-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+.main_men_shirts {
+  background-color: rgb(245, 245, 245);
+}
+
+.splide__list {
+  display: flex;
+}
+.splide__list .splide__slide {
+  flex: 1;
+}
+
+.slider_wrapper {
+  background-color: rgb(245, 245, 245);
+}
+
+.card {
+  width: 230px;
+  height: 370px;
+  border-radius: 10px;
+  text-align: start;
+  background-color: white;
+  margin: 12px;
+}
+.card .card_content {
+  padding: 10px;
+  font-size: 16px;
+  line-height: 20px;
+}
+.card .card_content .card_image_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .card_content .card_image_box .card_image {
+  width: 200px;
+  height: 250px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.card .card_content .card_image_box .card_image img {
+  width: 100%;
+  height: auto;
+}
+.card .card_content .card_brand_name {
+  color: black;
+  font-weight: 600;
+  font-size: 16px;
+}
+.card .card_content .card_price {
+  font-weight: 700;
+}
+.card .card_content .card_subtitle {
+  color: black;
+}
+
 header {
   background-color: #2b3238;
 }
@@ -83,6 +144,17 @@ header .container .header-body .socialmedia-services .sideMenu-Icon .Menu-Icon:h
   }
 }
 
+.banner-section {
+  margin-top: 20px;
+}
+.banner-section .Blog-Banner-Main .container .banner-content .splide__list .splide__slide {
+  flex: none;
+}
+.banner-section .Blog-Banner-Main .container .banner-content .splide__list .splide__slide .banner img {
+  max-width: 100%;
+  height: auto;
+}
+
 .Side-Menu.Open {
   background-color: #2b3238;
   top: 0;
@@ -124,94 +196,92 @@ header .container .header-body .socialmedia-services .sideMenu-Icon .Menu-Icon:h
   margin: 5px;
 }
 
-.banner-section {
-  margin-top: 20px;
-}
-.banner-section .Blog-Banner-Main .container .banner-content img {
+.Footer-mainPage .footer-section .animation-section {
+  position: relative;
   width: 100%;
   height: 400px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  background: #555a5f;
+  overflow: hidden;
 }
-@media (max-width: 576px) {
-  .banner-section .Blog-Banner-Main .container .banner-content img {
-    height: auto;
-  }
-}
-@media (min-width: 577px) and (max-width: 768px) {
-  .banner-section .Blog-Banner-Main .container .banner-content img {
-    height: auto;
-  }
-}
-
-.benifits-section .benifits-MainPage {
-  background-color: white;
-}
-.benifits-section .benifits-MainPage .container .benifits-content {
-  display: flex;
-  width: 100%;
-}
-.benifits-section .benifits-MainPage .container .benifits-content .benifits-content-left {
-  flex: 1 1 50%;
-}
-.benifits-section .benifits-MainPage .container .benifits-content .benifits-content-left .title-name {
-  color: aqua;
-  font-size: 24px;
-}
-.benifits-section .benifits-MainPage .container .benifits-content .benifits-content-left .subtitle-name {
-  color: black;
-  font-size: 36px;
-}
-@media (max-width: 576px) {
-  .benifits-section .benifits-MainPage .container .benifits-content .benifits-content-left {
-    flex: 1 1 100%;
-  }
-}
-@media (min-width: 577px) and (max-width: 768px) {
-  .benifits-section .benifits-MainPage .container .benifits-content .benifits-content-left {
-    flex: 1 1 100%;
-  }
-}
-.benifits-section .benifits-MainPage .container .benifits-content .benifits-content-right div {
-  color: black;
-  font-size: x-large;
-  margin: 20px;
-}
-@media (max-width: 576px) {
-  .benifits-section .benifits-MainPage .container .benifits-content {
-    flex-direction: column;
-  }
-}
-@media (min-width: 577px) and (max-width: 768px) {
-  .benifits-section .benifits-MainPage .container .benifits-content {
-    flex-direction: column;
-  }
-}
-
-.services-section .services-MainPage .container .services-content ul {
-  display: flex;
+.Footer-mainPage .footer-section .animation-section .footer-Body ul {
   justify-content: center;
+  display: flex;
   list-style: none;
-  flex-wrap: wrap;
-  gap: 5px;
 }
-.services-section .services-MainPage .container .services-content ul li {
-  flex-direction: column;
-  width: 22%;
-  max-width: 22%;
-  flex: 1 1 25%;
-  height: auto;
-  padding: 5px;
-  border: 1px solid black;
+.Footer-mainPage .footer-section .animation-section .footer-Body ul li {
+  margin: 12px;
+  padding: 12px;
+  font-size: x-large;
 }
-.services-section .services-MainPage .container .services-content ul li .Card .card-Icon {
-  color: rgb(47, 180, 135);
+.Footer-mainPage .footer-section .animation-section .air {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+  background-size: 1000px 100px;
 }
-.services-section .services-MainPage .container .services-content ul li .Card .card-Title {
-  color: rgb(77, 153, 77);
+.Footer-mainPage .footer-section .animation-section .air.air1 {
+  animation: wave 30s linear infinite;
+  z-index: 1000;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0;
 }
-.services-section .services-MainPage .container .services-content ul li .Card .card-Footer {
-  color: rgb(82, 168, 82);
+.Footer-mainPage .footer-section .animation-section .air.air2 {
+  animation: wave2 15s linear infinite;
+  z-index: 999;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom: 10px;
+}
+.Footer-mainPage .footer-section .animation-section .air.air3 {
+  animation: wave 30s linear infinite;
+  z-index: 998;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom: 15px;
+}
+.Footer-mainPage .footer-section .animation-section .air.air4 {
+  animation: wave2 5s linear infinite;
+  z-index: 997;
+  opacity: 0.7;
+  animation-delay: -5s;
+  bottom: 20px;
+}
+@keyframes wave {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+@keyframes wave2 {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: -1000px;
+  }
+}
+
+.cart_main_page .container .cart-content {
+  display: flex;
+}
+.cart_main_page .container .cart-content .cart-header {
+  flex: 1 30%;
+}
+.cart_main_page .container .cart-content .cart-body {
+  flex: 1 30%;
+}
+.cart_main_page .container .cart-content .cart-footer {
+  flex: 1 30%;
+}
+
+.btn {
+  background-color: rgb(233, 213, 33);
 }
 
 * {
@@ -369,314 +439,4 @@ body {
 }
 .create-post-Page .create-Post-Section .create-Post-Card .create-Post-Body .form button:hover {
   background-color: #32439b;
-}
-
-.Footer-mainPage {
-  border: 1px solid black;
-}
-.Footer-mainPage .container .footer-section .animation-section {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  background: #555a5f;
-  overflow: hidden;
-}
-.Footer-mainPage .container .footer-section .animation-section .footer-Body ul {
-  justify-content: center;
-  display: flex;
-  list-style: none;
-}
-.Footer-mainPage .container .footer-section .animation-section .footer-Body ul li {
-  margin: 12px;
-  padding: 12px;
-  font-size: x-large;
-}
-.Footer-mainPage .container .footer-section .animation-section .air {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
-  background-size: 1000px 100px;
-}
-.Footer-mainPage .container .footer-section .animation-section .air.air1 {
-  animation: wave 30s linear infinite;
-  z-index: 1000;
-  opacity: 1;
-  animation-delay: 0s;
-  bottom: 0;
-}
-.Footer-mainPage .container .footer-section .animation-section .air.air2 {
-  animation: wave2 15s linear infinite;
-  z-index: 999;
-  opacity: 0.5;
-  animation-delay: -5s;
-  bottom: 10px;
-}
-.Footer-mainPage .container .footer-section .animation-section .air.air3 {
-  animation: wave 30s linear infinite;
-  z-index: 998;
-  opacity: 0.2;
-  animation-delay: -2s;
-  bottom: 15px;
-}
-.Footer-mainPage .container .footer-section .animation-section .air.air4 {
-  animation: wave2 5s linear infinite;
-  z-index: 997;
-  opacity: 0.7;
-  animation-delay: -5s;
-  bottom: 20px;
-}
-@keyframes wave {
-  0% {
-    background-position-x: 0px;
-  }
-  100% {
-    background-position-x: 1000px;
-  }
-}
-@keyframes wave2 {
-  0% {
-    background-position-x: 0px;
-  }
-  100% {
-    background-position-x: -1000px;
-  }
-}
-
-@font-face {
-  font-family: "EnglishFonts";
-  src: url("../../../fonts/Montserrat-Regular.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-.main_men_shirts {
-  background-color: rgb(245, 245, 245);
-}
-
-.splide__list {
-  display: flex;
-}
-.splide__list .splide__slide {
-  flex: 1;
-}
-
-.slider_wrapper {
-  background-color: rgb(245, 245, 245);
-}
-
-.card {
-  width: 230px;
-  height: 370px;
-  border-radius: 10px;
-  text-align: start;
-  background-color: white;
-  margin: 12px;
-}
-.card .card_content {
-  padding: 10px;
-  font-size: 16px;
-  line-height: 20px;
-}
-.card .card_content .card_image_box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.card .card_content .card_image_box .card_image {
-  width: 200px;
-  height: 250px;
-  overflow: hidden;
-  margin-top: 10px;
-}
-.card .card_content .card_image_box .card_image img {
-  width: 100%;
-  height: auto;
-}
-.card .card_content .card_brand_name {
-  color: black;
-  font-weight: 600;
-  font-size: 16px;
-}
-.card .card_content .card_price {
-  font-weight: 700;
-}
-.card .card_content .card_subtitle {
-  color: black;
-}
-
-header {
-  background-color: #2b3238;
-}
-header .container .header-body {
-  display: flex;
-  justify-content: space-between;
-}
-header .container .header-body .header-content {
-  display: flex;
-  justify-content: start;
-}
-header .container .header-body .header-content .header-title {
-  color: white;
-  font-size: xx-large;
-  justify-content: center;
-  margin: 10px;
-}
-header .container .header-body .header-content .header-title:hover {
-  color: rgb(91, 145, 216);
-}
-header .container .header-body .header-content .header-services ul {
-  display: flex;
-  list-style: none;
-}
-header .container .header-body .header-content .header-services ul li {
-  font-size: large;
-  margin: 15px;
-  color: white;
-}
-header .container .header-body .header-content .header-services ul li:hover {
-  color: rgb(91, 145, 216);
-}
-@media (max-width: 576px) {
-  header .container .header-body .header-content .header-services {
-    display: none;
-  }
-}
-@media (min-width: 577px) and (max-width: 768px) {
-  header .container .header-body .header-content .header-services {
-    display: none;
-  }
-}
-header .container .header-body .socialmedia-services ul {
-  display: flex;
-  list-style: none;
-}
-header .container .header-body .socialmedia-services ul li {
-  font-size: x-large;
-  margin: 15px;
-  color: white;
-}
-header .container .header-body .socialmedia-services ul li:hover {
-  color: rgb(91, 145, 216);
-}
-@media (max-width: 576px) {
-  header .container .header-body .socialmedia-services ul {
-    display: none;
-  }
-}
-@media (min-width: 577px) and (max-width: 768px) {
-  header .container .header-body .socialmedia-services ul {
-    display: none;
-  }
-}
-header .container .header-body .socialmedia-services .sideMenu-Icon .Menu-Icon {
-  color: white;
-  border: 1px solid white;
-  border-radius: 5px;
-  padding: 5px 8px;
-  margin: 15px;
-}
-header .container .header-body .socialmedia-services .sideMenu-Icon .Menu-Icon:hover {
-  color: rgb(91, 145, 216);
-}
-@media (min-width: 769px) and (max-width: 992px) {
-  header .container .header-body .socialmedia-services .sideMenu-Icon {
-    display: none;
-  }
-}
-@media (min-width: 993px) {
-  header .container .header-body .socialmedia-services .sideMenu-Icon {
-    display: none;
-  }
-}
-
-.banner-section {
-  margin-top: 20px;
-}
-.banner-section .Blog-Banner-Main .container .banner-content img {
-  width: 100%;
-  height: 400px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-@media (max-width: 576px) {
-  .banner-section .Blog-Banner-Main .container .banner-content img {
-    height: auto;
-  }
-}
-@media (min-width: 577px) and (max-width: 768px) {
-  .banner-section .Blog-Banner-Main .container .banner-content img {
-    height: auto;
-  }
-}
-
-.benifits-section .benifits-MainPage {
-  background-color: white;
-}
-.benifits-section .benifits-MainPage .container .benifits-content {
-  display: flex;
-  width: 100%;
-}
-.benifits-section .benifits-MainPage .container .benifits-content .benifits-content-left {
-  flex: 1 1 50%;
-}
-.benifits-section .benifits-MainPage .container .benifits-content .benifits-content-left .title-name {
-  color: aqua;
-  font-size: 24px;
-}
-.benifits-section .benifits-MainPage .container .benifits-content .benifits-content-left .subtitle-name {
-  color: black;
-  font-size: 36px;
-}
-@media (max-width: 576px) {
-  .benifits-section .benifits-MainPage .container .benifits-content .benifits-content-left {
-    flex: 1 1 100%;
-  }
-}
-@media (min-width: 577px) and (max-width: 768px) {
-  .benifits-section .benifits-MainPage .container .benifits-content .benifits-content-left {
-    flex: 1 1 100%;
-  }
-}
-.benifits-section .benifits-MainPage .container .benifits-content .benifits-content-right div {
-  color: black;
-  font-size: x-large;
-  margin: 20px;
-}
-@media (max-width: 576px) {
-  .benifits-section .benifits-MainPage .container .benifits-content {
-    flex-direction: column;
-  }
-}
-@media (min-width: 577px) and (max-width: 768px) {
-  .benifits-section .benifits-MainPage .container .benifits-content {
-    flex-direction: column;
-  }
-}
-
-.services-section .services-MainPage .container .services-content ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-.services-section .services-MainPage .container .services-content ul li {
-  flex-direction: column;
-  width: 22%;
-  max-width: 22%;
-  flex: 1 1 25%;
-  height: auto;
-  padding: 5px;
-  border: 1px solid black;
-}
-.services-section .services-MainPage .container .services-content ul li .Card .card-Icon {
-  color: rgb(47, 180, 135);
-}
-.services-section .services-MainPage .container .services-content ul li .Card .card-Title {
-  color: rgb(77, 153, 77);
-}
-.services-section .services-MainPage .container .services-content ul li .Card .card-Footer {
-  color: rgb(82, 168, 82);
 }/*# sourceMappingURL=styles-mern_stack.css.map */

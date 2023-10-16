@@ -5,7 +5,7 @@ const MenShirts = () => {
     return (
         <React.Fragment>
             <div className='main_men_shirts'>
-                <Cards data={shirts_data} />
+                <Cards data={shirts_data} title={"Men Shirts"} />
             </div>
         </React.Fragment>
     )

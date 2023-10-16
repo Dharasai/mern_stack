@@ -4,8 +4,9 @@ import { faInstagram, faFacebook, faTwitter } from '@fortawesome/free-brands-svg
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSideMenuToggle } from './HeaderSlice';
+import { Link, useNavigate } from 'react-router-dom';
 const Header1 = () => {
-
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const sideMenuToggle = useSelector(state => state.header.sideMenuToggle);
     return (
@@ -19,7 +20,7 @@ const Header1 = () => {
                             </div>
                             <div className='header-services'>
                                 <ul>
-                                    <li className='header-items'>
+                                    <li className='header-items' onClick={() => navigate("/home")}>
                                         Home
                                     </li>
                                     <li className='header-items'>
@@ -31,7 +32,7 @@ const Header1 = () => {
                                     <li className='header-items'>
                                         Blog
                                     </li>
-                                    <li className='header-items'>
+                                    <li className='header-items' onClick={() => navigate("/cart")}>
                                         View
                                     </li>
                                 </ul>
