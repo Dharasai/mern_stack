@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Montserrat", sans-serif;
-  src: url("../../../fonts/Montserrat-Regular.ttf");
+  font-family: "Roboto Condensed", sans-serif;
+  src: url("../../../fonts/RobotoCondensed-Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
@@ -155,6 +155,78 @@ header .container .header-body .socialmedia-services .sideMenu-Icon .Menu-Icon:h
   height: auto;
 }
 
+.collections_main_page .container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+.collections_main_page .container .container .card .content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.5s;
+}
+.collections_main_page .container .container .card:hover .content {
+  transform: translateY(-20px);
+}
+.collections_main_page .container .container .card .content .imgBx {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+.collections_main_page .container .container .card .content .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.collections_main_page .container .container .card .content .contentBx h3 {
+  color: #111010;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0 10px;
+  line-height: 1.1em;
+}
+.collections_main_page .container .container .card .content .contentBx h3 span {
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: initial;
+}
+.collections_main_page .container .container .card .sci {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+}
+.collections_main_page .container .container .card .sci li {
+  list-style: none;
+  margin: 0 10px;
+  transform: translateY(40px);
+  transition: 0.5s;
+  opacity: 0;
+}
+.collections_main_page .container .container .card:hover .sci li {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.collections_main_page .container .container .card .sci li button {
+  width: 100%;
+  color: black;
+  font-size: 20px;
+}
+
 .Side-Menu.Open {
   background-color: #2b3238;
   top: 0;
@@ -277,6 +349,9 @@ header .container .header-body .socialmedia-services .sideMenu-Icon .Menu-Icon:h
 .cart_main_page .container .cart-content .cart-body {
   flex: 1 40%;
 }
+.cart_main_page .container .cart-content .cart-body .review-status {
+  display: flex;
+}
 .cart_main_page .container .cart-content .cart-body .content-txt {
   margin: 10px 0px;
 }
@@ -313,8 +388,43 @@ header .container .header-body .socialmedia-services .sideMenu-Icon .Menu-Icon:h
   border: 0.5px solid rgb(133, 129, 129);
   margin-right: 3px;
 }
-.cart_main_page .container .cart-content .cart-footer {
-  flex: 1 20%;
+.cart_main_page .container .cart-content .cart-body .cart-footer-description {
+  margin-top: 10px;
+}
+.cart_main_page .container .cart-content .cart-body .cart-footer-description ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  border-bottom: 2px solid rgb(209, 205, 205);
+}
+.cart_main_page .container .cart-content .cart-body .cart-footer-description ul li {
+  text-decoration: none;
+  list-style: none;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+.cart_main_page .container .cart-content .cart-body .cart-footer-description ul li.active {
+  margin-bottom: -2px;
+  border-bottom: 2px solid black;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
 
 .btn {
@@ -441,7 +551,7 @@ header .container .header-body .socialmedia-services .sideMenu-Icon .Menu-Icon:h
 }
 
 body {
-  font-family: "TeluguFonts";
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 .container {

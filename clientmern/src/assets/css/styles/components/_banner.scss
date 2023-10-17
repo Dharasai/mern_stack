@@ -18,3 +18,121 @@
         }
     }
 }
+
+// .collections_main_page {
+//     .container {
+//         .collections_content {
+//             display: flex;
+//             justify-content: space-between;
+//             .card {
+//                 width: 200px;
+//                 height: auto;
+//                 // border: 1px solid #ccc;
+//                 // border-radius: 50%;
+//                 overflow: hidden;
+//                 /* transition: transform 0.3s; */
+//             }
+
+//             .card-content {
+//                 padding: 10px;
+//             }
+
+//             .image-container {
+//                 overflow: hidden;
+//             }
+
+//             img {
+//                 // border-radius: 50%;
+//                 width: 100%;
+//                 height: 100%;
+//                 object-fit: cover;
+//                 transition: transform 0.3s; /* Add a smooth transition for the image zoom */
+//             }
+
+//             .card:hover .image-container img {
+//                 transform: scale(1.1);
+//             }
+//         }
+//     }
+// }
+
+.collections_main_page {
+    .container {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 40px 0;
+
+        .container .card .content {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: 0.5s;
+        }
+
+        .container .card:hover .content {
+            transform: translateY(-20px);
+        }
+        .container .card .content .imgBx {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+        }
+        .container .card .content .imgBx img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .container .card .content .contentBx h3 {
+            color: #111010;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            font-size: 18px;
+            text-align: center;
+            margin: 20px 0 10px;
+            line-height: 1.1em;
+        }
+
+        .container .card .content .contentBx h3 span {
+            font-size: 12px;
+            font-weight: 300;
+            text-transform: initial;
+        }
+
+        .container .card .sci {
+            position: absolute;
+            bottom: 50px;
+            display: flex;
+        }
+
+        .container .card .sci li {
+            list-style: none;
+            margin: 0 10px;
+            transform: translateY(40px);
+            transition: 0.5s;
+            opacity: 0;
+        }
+
+        .container .card:hover .sci li {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+
+        .container .card .sci li button {
+            width: 100%;
+            color: black;
+            font-size: 20px;
+        }
+    }
+}

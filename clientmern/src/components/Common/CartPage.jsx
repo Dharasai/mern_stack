@@ -1,9 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import cart_data from "../../APIData/Cart/cartdata.json";
+import sizechart from "../../APIData/Cart/sizechart.json";
 
 const CartPage = () => {
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0);
+    const [cartTabData, setCartTabData] = useState("description");
+    const [product, setProduct] = useState();
+
+    useEffect(() => {
+        const product = cartTabData === "description" ? cart_data[0].description : cartTabData === "delivery" ? cart_data[0].delivery : cartTabData === "reviews" ? cart_data[0].customerreview : "";
+        setProduct(product)
+    }, [cartTabData]);
+
     const data = {
         "imageUrl": "https://rukminim1.flixcart.com/image/612/612/kfmv9u80-0/jean/e/9/e/36-hljn000670-highlander-original-imafwfj6zhxw39wg.jpeg?q=70",
         "brand": "HIGHLANDER",
@@ -49,13 +59,13 @@ const CartPage = () => {
                                     {data?.title}
                                 </h3>
                                 <div className='review-status'>
-                                    Review
+                                    <div className='txt'>Review</div>
                                 </div>
                             </div>
                             <div className='product-price-details'>
-                                <h4 >
+                                <h1 >
                                     {"$ " + data?.price}
-                                </h4>
+                                </h1>
                                 <div className='product-description' >
                                     <div className='content-txt'>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -99,9 +109,44 @@ const CartPage = () => {
                                     <button className=' button2'> Buy now</button>
                                 </div>
                             </div>
-                        </div>
-                        <div className='cart-footer'>
 
+                            <div className='cart-footer-description'>
+                                <ul className='description-tabs'>
+                                    <li className={`tab-item ${cartTabData === "description" && "active"}`} onClick={() => setCartTabData("description")}>Description</li>
+                                    <li className={`tab-item ${cartTabData === "reviews" && "active"}`} onClick={() => setCartTabData("reviews")}>Reviews</li>
+                                    <li className={`tab-item ${cartTabData === "sizechart" && "active"}`} onClick={() => setCartTabData("sizechart")}>SizeChart</li>
+                                    <li className={`tab-item ${cartTabData === "delivery" && "active"}`} onClick={() => setCartTabData("delivery")}>Shipping & Delivery</li>
+                                </ul>
+                                <div className='tab-content'>
+                                    {cartTabData !== "sizechart" ?
+                                        <p>{product}</p>
+                                        :
+                                        <div className='table'>
+                                            <table>
+                                                <tr>
+                                                    <th>SIZE</th>
+                                                    <th>CHEST(IN.)</th>
+                                                    <th>WAIST(IN.)</th>
+                                                    <th>HIPS(IN.)</th>
+                                                </tr>
+
+                                                {
+                                                    Object.entries(sizechart[0].sizechart).map(([size, measurements]) => {
+                                                        return (
+                                                            <tr>
+                                                                <td>{size}</td>
+                                                                <td>{measurements.chest}</td>
+                                                                <td>{measurements.waist}</td>
+                                                                <td>{measurements.hips}</td>
+                                                            </tr>
+                                                        )
+                                                    })
+                                                }
+                                            </table>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

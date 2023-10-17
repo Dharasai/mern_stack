@@ -1,6 +1,7 @@
 import React from 'react';
 import TrendingProducts from '../TrendingProducts/TrendingProducts';
 import HomePageBanner from '../Banners/HomePageBanner';
+import Collections from '../Banners/Collections';
 
 
 
@@ -21,6 +22,7 @@ const Home = () => {
                 <div className='banner-section'>
                     <div className='container'>
                         <HomePageBanner />
+                        <Collections />
                         <TrendingProducts />
 
                     </div>
